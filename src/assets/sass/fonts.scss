@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+@import "src/assets/sass/variables.scss";
+
+* {
+  font-family: "Quicksand", sans-serif;
+  color: $black;
+
+  span {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+@each $number in $hNumbers {
+  h#{$number} {
+    font-size: $fontSizeInit - 0.25 * $number + rem;
+    font-weight: $fontWeightInit - 100 * $number;
+  }
+}
