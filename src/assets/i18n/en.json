@@ -1,6 +1,8 @@
 {
   "login": {
     "email": "Email",
-    "password": "Password"
+    "password": "Password",
+    "create-account": "Create account",
+    "sign-in-instead": "Sign in instead"
   }
 }
