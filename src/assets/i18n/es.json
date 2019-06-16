@@ -1,0 +1,8 @@
+{
+  "login": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "create-account": "Crear cuenta",
+    "sign-in-instead": "Prefiero iniciar sesión"
+  }
+}
