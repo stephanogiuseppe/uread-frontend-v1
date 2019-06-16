@@ -1,8 +1,8 @@
 {
   "name": "uread-frontend",
   "short_name": "uread-frontend",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#f0602a",
+  "background_color": "#fefefe",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
