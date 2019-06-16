@@ -4,7 +4,6 @@
   box-sizing: border-box;
   outline: none;
 }
-
 .d-flex {
   display: flex;
 }
@@ -13,4 +12,7 @@
 }
 .ai-center {
   align-items: center;
+}
+.icons-image {
+  background-image: url('src/assets/img/logo/uread-logos.png');
 }
