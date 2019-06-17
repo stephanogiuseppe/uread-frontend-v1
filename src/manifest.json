@@ -1,6 +1,6 @@
 {
-  "name": "uread-frontend",
-  "short_name": "uread-frontend",
+  "name": "URead",
+  "short_name": "URead",
   "theme_color": "#f0602a",
   "background_color": "#fefefe",
   "display": "standalone",
