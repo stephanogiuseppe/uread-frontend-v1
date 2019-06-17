@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PostsService } from './../../shared/services/posts.service';
+import { Post } from 'src/app/shared/models/Post.model';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  public posts: Array<Post>;
 
-  public ngOnInit(): void {}
+  constructor(private postsService: PostsService) {}
+
+  public ngOnInit(): void {
+    this.postsService.getPosts().subscribe(posts => (this.posts = posts));
+  }
 }

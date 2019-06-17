@@ -8,14 +8,22 @@
       formControlName="emailFormControl"
     />
 
-    <template *ngIf="profileForm.controls.emailFormControl.errors">
-      <mat-error *ngIf="profileForm.controls.emailFormControl.errors.email">
-        {{ 'login.error-message.email-valid' | translate }}
-      </mat-error>
-      <mat-error *ngIf="profileForm.controls.emailFormControl.errors.required">
-        {{ 'login.error-message.email-required' | translate }}
-      </mat-error>
-    </template>
+    <mat-error
+      *ngIf="
+        profileForm.controls.emailFormControl.errors &&
+        profileForm.controls.emailFormControl.errors.email
+      "
+    >
+      {{ 'login.error-message.email-valid' | translate }}
+    </mat-error>
+    <mat-error
+      *ngIf="
+        profileForm.controls.emailFormControl.errors &&
+        profileForm.controls.emailFormControl.errors.required
+      "
+    >
+      {{ 'login.error-message.email-required' | translate }}
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">

@@ -1,7 +1,8 @@
 <main>
   <div class="main-center">
-    <p>
-      home works!
-    </p>
+    <aside class="main-filter-container"></aside>
+    <section *ngFor="let post of posts">
+      <app-mini-post [post]="post"></app-mini-post>
+    </section>
   </div>
 </main>

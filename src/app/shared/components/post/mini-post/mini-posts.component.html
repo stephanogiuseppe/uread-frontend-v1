@@ -1,0 +1,10 @@
+<div
+  class="post-container"
+  [ngStyle]="{ 'background-image': 'url(' + IMG_SRC + post.image + ')' }"
+>
+  <div class="post-info">
+    <div>{{ post.author.name }}</div>
+    <div>{{ post.title }}</div>
+    <div>{{ post.tags }}</div>
+  </div>
+</div>
