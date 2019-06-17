@@ -1,3 +1,68 @@
-<p>
-  nav-bar works!
-</p>
+<nav>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a
+        mat-button
+        [routerLink]="['/home']"
+        class="mat-button"
+        routerLinkActive="active-link"
+      >
+        <span class="menu-item-icon"
+          ><mat-icon
+            class="menu-icon"
+            aria-hidden="false"
+            aria-label="Favorites"
+            >home</mat-icon
+          >
+        </span>
+        <span class="menu-item-description">
+          {{ 'home.feeds.title-page' | translate }}
+        </span>
+      </a>
+
+      <a
+        mat-button
+        [routerLink]="['/posts']"
+        class="mat-button"
+        routerLinkActive="active-link"
+      >
+        <span class="menu-item-icon"
+          ><mat-icon
+            class="menu-icon"
+            aria-hidden="false"
+            aria-label="Favorites"
+            >list</mat-icon
+          >
+        </span>
+        <span class="menu-item-description">
+          {{ 'columns.post.title-page' | translate }}
+        </span>
+      </a>
+      <span class="menu-spacer"></span>
+      <mat-icon class="menu-icon" aria-hidden="false" aria-label="Favorites"
+        >notifications_active</mat-icon
+      >
+      <mat-icon class="menu-icon" aria-hidden="false" aria-label="Favorites"
+        >favorite</mat-icon
+      >
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Profile</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+        <button mat-menu-item (click)="logOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Exit</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</nav>

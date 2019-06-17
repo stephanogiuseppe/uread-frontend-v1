@@ -1,0 +1,31 @@
+@import 'src/assets/sass/colors.scss';
+
+.menu-icon {
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.active-link {
+  background: rgba($black, 0.25);
+  color: $white;
+}
+
+.menu-item-icon {
+  display: none;
+}
+.menu-item-description {
+  display: -webkit-inline-box;
+}
+
+@media screen and (max-width: 450px) {
+  .menu-item-icon {
+    display: -webkit-inline-box;
+  }
+  .menu-item-description {
+    display: none;
+  }
+}
