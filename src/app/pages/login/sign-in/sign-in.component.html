@@ -6,7 +6,6 @@
       type="email"
       placeholder="user@mail.com"
       formControlName="emailFormControl"
-      [errorStateMatcher]="matcher"
     />
 
     <template *ngIf="profileForm.controls.emailFormControl.errors">
@@ -26,7 +25,6 @@
       type="password"
       placeholder="user@mail.com"
       formControlName="passwordFormControl"
-      [errorStateMatcher]="matcher"
     />
     <mat-error
       *ngIf="

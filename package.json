@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-prod": "ng build --prod && angular-http-server --path ./dist/random-pwa -p 8822"
+    "build-prod": "ng build --prod && angular-http-server --path ./dist/uread-frontend -p 8822"
   },
   "private": true,
   "dependencies": {
