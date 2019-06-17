@@ -13,8 +13,8 @@ import { User } from '../models/User.model';
 export class UserService {
   private STORAGE = 'localStorage';
   private USER_DATA = environment.dataStorage.user;
-  private REGISTER_USER_URL = `${environment.api.baseUrl}/register`;
-  private AUTH_URL = `${environment.api.baseUrl}/authenticate`;
+  private REGISTER_USER_URL = `${environment.api.baseUrl}/auth/register`;
+  private AUTH_URL = `${environment.api.baseUrl}/auth/authenticate`;
 
   private headers = {
     headers: new HttpHeaders({
@@ -53,7 +53,7 @@ export class UserService {
   }
 
   public signInUser(user: User): void {
-    this.http.post<any>(this.AUTH_URL, user, this.headers).subscribe(
+    this.http.post<any>(this.AUTH_URL, user).subscribe(
       userCredentials => {
         this.storageService.setItemStorage(
           this.USER_DATA,
@@ -74,9 +74,9 @@ export class UserService {
     this.changeLogged(false);
   }
 
-  verifyDataStorage(): void {
+  public verifyDataStorage(): void {
     const userDataLocalStorage = this.storageService.getValueFromKeyStorage(
-      'userData'
+      environment.dataStorage.user
     );
     if (userDataLocalStorage) {
       this.changeLogged(true);

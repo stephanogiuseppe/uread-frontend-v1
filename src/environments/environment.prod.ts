@@ -4,7 +4,7 @@ export const environment = {
     identityProvider: ''
   },
   api: {
-    baseUrl: 'http://localhost:3838/api',
+    baseUrl: 'http://localhost:3838',
     authUri: '/auth',
     columnUri: '/columns',
     postUri: '/post'
