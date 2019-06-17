@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from './../../shared/services/user.service';
@@ -13,7 +14,8 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     translate.setDefaultLang('pt-br');
     translate.use('pt-br');
@@ -23,5 +25,6 @@ export class NavBarComponent implements OnInit {
 
   public logOut(): void {
     this.userService.signOutUser();
+    this.router.navigate(['/login']);
   }
 }
