@@ -9,7 +9,7 @@ import { UserService } from './shared/services/user.service';
 })
 export class AppComponent implements OnInit {
   public isAuthenticated: boolean;
-  public title = 'URead';
+  public title = 'uRead';
 
   constructor(private userService: UserService) {}
 
