@@ -7,3 +7,8 @@ main {
   background-size: 390px;
   background-position-y: -70px;
 }
+@media screen and (max-width: 450px) {
+  .card {
+    width: 275px;
+  }
+}
