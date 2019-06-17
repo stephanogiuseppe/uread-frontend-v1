@@ -1,5 +1,49 @@
-<mat-form-field appearance="outline">
-  <mat-label>{{ 'login.email' | translate }}</mat-label>
-  <input matInput placeholder="Placeholder" />
-  <mat-hint>Hint</mat-hint>
-</mat-form-field>
+<form [formGroup]="profileForm">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'login.email' | translate }}</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="user@mail.com"
+      formControlName="emailFormControl"
+      [errorStateMatcher]="matcher"
+    />
+
+    <template *ngIf="profileForm.controls.emailFormControl.errors">
+      <mat-error *ngIf="profileForm.controls.emailFormControl.errors.email">
+        {{ 'login.error-message.email-valid' | translate }}
+      </mat-error>
+      <mat-error *ngIf="profileForm.controls.emailFormControl.errors.required">
+        {{ 'login.error-message.email-required' | translate }}
+      </mat-error>
+    </template>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'login.password' | translate }}</mat-label>
+    <input
+      matInput
+      type="password"
+      placeholder="user@mail.com"
+      formControlName="passwordFormControl"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error
+      *ngIf="
+        profileForm.controls.passwordFormControl.errors &&
+        profileForm.controls.passwordFormControl.errors.required
+      "
+    >
+      {{ 'login.error-message.password-required' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="fl-right"
+    (click)="onSubmit()"
+  >
+    {{ 'login.enter' | translate }}
+  </button>
+</form>

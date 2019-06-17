@@ -6,17 +6,16 @@ interface Login {
 }
 
 export class User implements Login {
-  name: string;
   email: string;
   password: string;
-  passwordResetToken: string;
-  passwordResetExpires: Date;
-  createdAt: Date;
+  name?: string;
+  passwordResetToken?: string;
+  passwordResetExpires?: Date;
+  createdAt?: Date;
   favoritePosts?: Array<string>;
   subscriptions?: Array<Column>;
 
-  constructor(name: string, email: string, password: string) {
-    this.name = name;
+  constructor(email: string, password: string) {
     this.email = email;
     this.password = password;
   }

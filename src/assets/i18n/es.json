@@ -3,6 +3,12 @@
     "email": "Correo electrónico",
     "password": "Contraseña",
     "create-account": "Crear cuenta",
-    "sign-in-instead": "Prefiero iniciar sesión"
+    "sign-in-instead": "Prefiero iniciar sesión",
+    "enter": "Entrar",
+    "error-message": {
+      "email-valid": "Por favor, introduce una dirección de correo electrónico válida",
+      "email-required": "Correo electronico es requerido",
+      "password-required": "Se requiere contraseña"
+    }
   }
 }

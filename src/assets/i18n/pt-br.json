@@ -3,6 +3,12 @@
     "email": "E-mail",
     "password": "Senha",
     "create-account": "Criar conta",
-    "sign-in-instead": "Fazer login ao invés disso"
+    "sign-in-instead": "Fazer login ao invés disso",
+    "enter": "Entrar",
+    "error-message": {
+      "email-valid": "Por favor, entre com um e-mail válido",
+      "email-required": "E-mail é obrigatório",
+      "password-required": "Senha é obrigatória"
+    }
   }
 }

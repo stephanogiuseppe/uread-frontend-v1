@@ -3,6 +3,12 @@
     "email": "Email",
     "password": "Password",
     "create-account": "Create account",
-    "sign-in-instead": "Sign in instead"
+    "sign-in-instead": "Sign in instead",
+    "enter": "Enter",
+    "error-message": {
+      "email-valid": "Please enter a valid email address",
+      "email-required": "Email is required",
+      "password-required": "Email is required"
+    }
   }
 }
