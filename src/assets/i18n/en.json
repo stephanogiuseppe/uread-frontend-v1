@@ -10,5 +10,18 @@
       "email-required": "Email is required",
       "password-required": "Email is required"
     }
+  },
+  "home": {
+    "feeds": {
+      "title-page": "Feed"
+    }
+  },
+  "columns": {
+    "column": {
+      "title-page": "Columns"
+    },
+    "post": {
+      "title-page": "Posts"
+    }
   }
 }

@@ -1,0 +1,6 @@
+@import 'src/assets/sass/colors.scss';
+
+::ng-deep .mat-tab-label.mat-tab-label-active {
+  color: $primary;
+  font-weight: 700;
+}

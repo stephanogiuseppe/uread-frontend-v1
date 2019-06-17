@@ -10,5 +10,18 @@
       "email-required": "E-mail é obrigatório",
       "password-required": "Senha é obrigatória"
     }
+  },
+  "home": {
+    "feeds": {
+      "title-page": "Feed"
+    }
+  },
+  "columns": {
+    "column": {
+      "title-page": "Colunas"
+    },
+    "post": {
+      "title-page": "Postagens"
+    }
   }
 }

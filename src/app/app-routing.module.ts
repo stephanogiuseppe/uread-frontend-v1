@@ -14,6 +14,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
+    path: 'posts',
+    loadChildren: './pages/column/column.module#ColumnModule',
+    canActivate: [AuthGuardService]
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: '/home',
