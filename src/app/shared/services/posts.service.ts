@@ -34,4 +34,11 @@ export class PostsService {
   public getPosts(): Observable<any> {
     return this.http.get<any>(this.POST_URL, this.headers);
   }
+
+  public getPostsByName(search: string): Observable<any> {
+    return this.http.get<any>(
+      `${this.POST_URL}/search/${search}`,
+      this.headers
+    );
+  }
 }

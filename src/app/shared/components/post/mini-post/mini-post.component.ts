@@ -14,7 +14,5 @@ export class MiniPostComponent implements OnInit {
 
   constructor() {}
 
-  public ngOnInit(): void {
-    console.log('->', this.post);
-  }
+  public ngOnInit(): void {}
 }

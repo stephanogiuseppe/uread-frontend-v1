@@ -1,6 +1,36 @@
 <main>
   <div class="main-center">
-    <aside class="main-filter-container"></aside>
+    <aside class="main-filter-container">
+      <h3>{{ 'home.feeds.filter' | translate }}</h3>
+      <form [formGroup]="searchForm">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'home.feeds.columns-name' | translate }}</mat-label>
+          <mat-select [disabled]="!columns || !columns.length">
+            <mat-option *ngFor="let column of columns" [value]="column._id">
+              {{ column.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'home.feeds.post-name' | translate }}</mat-label>
+          <input matInput type="text" formControlName="searchFormControl" />
+        </mat-form-field>
+      </form>
+      <button
+        mat-raised-button
+        color="primary"
+        class="fl-right"
+        (click)="onSubmit()"
+      >
+        {{ 'home.feeds.search' | translate }}
+      </button>
+
+      <div *ngIf="searchForm.controls.searchFormControl.value">
+        {{ 'home.feeds.search-applied' | translate }}:
+        {{ searchForm.controls.searchFormControl.value }}
+      </div>
+    </aside>
     <section *ngFor="let post of posts">
       <app-mini-post [post]="post"></app-mini-post>
     </section>

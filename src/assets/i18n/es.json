@@ -13,7 +13,12 @@
   },
   "home": {
     "feeds": {
-      "title-page": "Feed"
+      "title-page": "Feed",
+      "filter": "Filtro",
+      "columns-name": "Columnas",
+      "post-name": "Post nombre",
+      "search": "Búsqueda",
+      "applied-search": "Búsqueda aplicada"
     }
   },
   "columns": {
