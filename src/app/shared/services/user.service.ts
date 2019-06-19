@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { environment } from './../../../environments/environment';
 import { StorageService } from './storage.service';
 import { User } from '../models/User.model';
+import { Observable } from 'rxjs';
 
 // TODO: refresh token
 @Injectable({ providedIn: 'root' })
@@ -15,6 +16,7 @@ export class UserService {
   private USER_DATA = environment.dataStorage.user;
   private REGISTER_USER_URL = `${environment.api.baseUrl}/auth/register`;
   private AUTH_URL = `${environment.api.baseUrl}/auth/authenticate`;
+  private USER_URL = `${environment.api.baseUrl}/user`;
 
   private headers = {
     headers: new HttpHeaders({
@@ -81,5 +83,9 @@ export class UserService {
     if (userDataLocalStorage) {
       this.changeLogged(true);
     }
+  }
+
+  public updateUser(user: User): Observable<any> {
+    return this.http.put<any>(`${this.USER_URL}/${user._id}`, this.headers);
   }
 }
