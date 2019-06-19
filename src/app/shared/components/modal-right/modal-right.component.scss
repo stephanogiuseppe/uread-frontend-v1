@@ -1,0 +1,137 @@
+@import 'src/assets/sass/colors.scss';
+
+.modal-block {
+  position: fixed;
+  display: flex;
+  top: 0px;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  z-index: 10;
+  background-color: $black;
+  opacity: 0.3;
+
+  &.modal-block-right {
+    float: right;
+    justify-content: flex-end;
+  }
+}
+
+.gi-close {
+  height: 1.2rem;
+  width: 1rem;
+  position: fixed;
+  float: left;
+  top: 2.7rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.fade-modal {
+  display: block;
+  position: fixed;
+  float: right;
+  top: 0rem;
+  z-index: 10;
+  height: 100vh;
+  padding: 0rem 3.5rem 3rem 2.5rem;
+  background: -webkit-linear-gradient(180deg, $white 6rem, $primary 4rem);
+  overflow: auto;
+
+  &.fade-in-modal {
+    right: 0rem;
+    -webkit-animation: fade-in-modal-right 0.2s ease-in-out;
+    -moz-animation: fade-in-modal-right 0.2s ease-in-out;
+    -o-animation: fade-in-modal-right 0.2s ease-in-out;
+    animation: fade-in-modal-right 0.2s ease-in-out;
+  }
+
+  &.fade-out-modal {
+    right: 0rem;
+    -webkit-animation: fade-out-modal-right 0.2s ease-in-out;
+    -moz-animation: fade-out-modal-right 0.2s ease-in-out;
+    -o-animation: fade-out-modal-right 0.2s ease-in-out;
+    animation: fade-out-modal-right 0.2s ease-in-out;
+  }
+}
+
+@-webkit-keyframes fade-in-modal-right {
+  0% {
+    opacity: 0;
+    right: -20rem;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+@-moz-keyframes fade-in-modal-right {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+@-o-keyframes fade-in-modal-right {
+  0% {
+    opacity: 0;
+    right: -20rem;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+@keyframes fade-in-modal-right {
+  0% {
+    opacity: 0;
+    right: -20rem;
+  }
+  100% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+
+@-webkit-keyframes fade-out-modal-right {
+  0% {
+    opacity: 1;
+    right: 0rem;
+  }
+  100% {
+    opacity: 0;
+    right: -20rem;
+  }
+}
+@-moz-keyframes fade-out-modal-right {
+  0% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+    right: 0rem;
+  }
+}
+@-o-keyframes fade-out-modal-right {
+  0% {
+    opacity: 1;
+    right: 0rem;
+  }
+  100% {
+    opacity: 0;
+    right: -20rem;
+  }
+}
+@keyframes fade-out-modal-right {
+  0% {
+    opacity: 1;
+    right: 0rem;
+  }
+  100% {
+    opacity: 0;
+    right: -20rem;
+  }
+}

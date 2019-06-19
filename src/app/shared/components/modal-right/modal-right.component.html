@@ -1,0 +1,10 @@
+<div class="modal-block" (click)="closeModal()"></div>
+<div
+  class="wrapper fade-modal"
+  [style.width]="modalRightWidth"
+  [ngClass]="fadeOut ? 'fade-out-modal' : 'fade-in-modal'"
+>
+  <div class="gi-close" (click)="closeModal()">
+    <ng-content></ng-content>
+  </div>
+</div>
