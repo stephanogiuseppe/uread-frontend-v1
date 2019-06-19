@@ -1,0 +1,15 @@
+<main>
+  <div class="main-center">
+    <section>
+      <app-modal-right
+        [close]="true"
+        [closeModalSubscription]="closeSubject.asObservable()"
+        (closed)="onChangeFilterOptionsBox('filterOption')"
+        *ngIf="filterOption"
+      >
+        CONTENT TEST
+      </app-modal-right>
+    </section>
+    <button (click)="onChangeOpenFilterOption()">T</button>
+  </div>
+</main>

@@ -11,6 +11,11 @@
       "password-required": "Email is required"
     }
   },
+  "nav": {
+    "profile": "Profile",
+    "disable-alerts": "Disable alerts",
+    "exit": "Exit"
+  },
   "home": {
     "feeds": {
       "title-page": "Feed",

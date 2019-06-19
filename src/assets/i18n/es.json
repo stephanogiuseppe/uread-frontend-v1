@@ -11,6 +11,11 @@
       "password-required": "Se requiere contraseña"
     }
   },
+  "nav": {
+    "profile": "Perfil",
+    "disable-alerts": "Deshabilitar las alertas",
+    "exit": "Salida"
+  },
   "home": {
     "feeds": {
       "title-page": "Feed",

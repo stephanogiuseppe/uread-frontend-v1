@@ -11,6 +11,11 @@
       "password-required": "Senha é obrigatória"
     }
   },
+  "nav": {
+    "profile": "Perfil",
+    "disable-alerts": "Desabilitar alertas",
+    "exit": "Sair"
+  },
   "home": {
     "feeds": {
       "title-page": "Feed",

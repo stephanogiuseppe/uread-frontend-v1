@@ -51,16 +51,27 @@
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>
-          <mat-icon>settings</mat-icon>
-          <span>Profile</span>
+          <a [routerLink]="['/profile']">
+            <span>
+              <mat-icon
+                class="menu-icon"
+                aria-hidden="false"
+                aria-label="Settings"
+                >settings</mat-icon
+              >
+            </span>
+            <span class="menu-item-description">
+              {{ 'nav.profile' | translate }}
+            </span>
+          </a>
         </button>
         <button mat-menu-item disabled>
           <mat-icon>notifications_off</mat-icon>
-          <span>Disable alerts</span>
+          <span>{{ 'nav.disable-alerts' | translate }}</span>
         </button>
         <button mat-menu-item (click)="logOut()">
           <mat-icon>exit_to_app</mat-icon>
-          <span>Exit</span>
+          <span>{{ 'nav.exit' | translate }}</span>
         </button>
       </mat-menu>
     </mat-toolbar-row>

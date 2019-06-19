@@ -9,6 +9,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 
 import { MiniPostComponent } from '../components/post/mini-post/mini-post.component';
+import { FullPostComponent } from '../components/post/full-post/full-post.component';
+import { ModalRightComponent } from '../components/modal-right/modal-right.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -34,7 +36,7 @@ const customNotifierOptions: NotifierOptions = {
 };
 
 @NgModule({
-  declarations: [MiniPostComponent],
+  declarations: [MiniPostComponent, FullPostComponent, ModalRightComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -45,6 +47,8 @@ const customNotifierOptions: NotifierOptions = {
   ],
   exports: [
     MiniPostComponent,
+    FullPostComponent,
+    ModalRightComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

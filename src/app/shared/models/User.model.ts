@@ -6,6 +6,7 @@ interface Login {
 }
 
 export class User implements Login {
+  _id?: string;
   email: string;
   password: string;
   name?: string;
