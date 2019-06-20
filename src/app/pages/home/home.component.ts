@@ -24,6 +24,8 @@ export class HomeComponent implements OnInit {
   public toggleOptions: Array<string> = ['posts', 'columns', 'subscriptions'];
   public isPostOpen: boolean;
   public closeSubject: Subject<boolean> = new Subject<boolean>();
+  public subscriptions: Array<any>;
+  public uerId: string;
 
   constructor(
     private translate: TranslateService,
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
   ) {
     translate.setDefaultLang('pt-br');
     translate.use('pt-br');
+    this.uerId = JSON.parse(localStorage.getItem('usrdt')).user._id;
   }
 
   public ngOnInit(): void {
@@ -73,16 +76,25 @@ export class HomeComponent implements OnInit {
 
   public getColumns(): void {
     this.isShowPosts = false;
-    this.columnsService
-      .getColumns()
-      .subscribe(columns => (this.columns = columns));
+    this.columnsService.getColumns().subscribe(columns => {
+      this.columns = columns;
+      columns.forEach(column => {
+        this.subscriptions = column.subscriptions.filter(
+          subsc => subsc._id === this.uerId
+        );
+      });
+    });
   }
 
   public getSubscriptions(): void {
     this.isShowPosts = false;
-    this.columnsService
-      .getColumnBySubscriptions()
-      .subscribe(columns => (this.columns = columns));
+    this.columnsService.getColumnBySubscriptions().subscribe(
+      columns => {
+        console.log(columns);
+        this.columns = columns;
+      },
+      err => console.log(err)
+    );
   }
 
   public emitEventCloseToModalRight(): void {
@@ -91,5 +103,23 @@ export class HomeComponent implements OnInit {
 
   public onChangeModalState(option): void {
     this[option] = !this[option];
+  }
+
+  public favoriteColumn(favorite: boolean, columnId: string): void {
+    if (favorite) {
+      this.columnsService.subscribeColumn(columnId).subscribe(subsRes => {
+        this.getColumns();
+      });
+      return;
+    }
+    this.columnsService.unsubscribeColumn(columnId).subscribe(subsRes => {
+      this.getColumns();
+    });
+  }
+
+  public verifyIsFavorite(column): number {
+    return column.subscriptions.filter(subscription =>
+      this.subscriptions.includes(subscription)
+    ).length;
   }
 }

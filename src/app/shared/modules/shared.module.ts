@@ -8,6 +8,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 
+import { MiniColumnComponent } from '../components/column/mini-column/mini-column.component';
 import { MiniPostComponent } from '../components/post/mini-post/mini-post.component';
 import { FullPostComponent } from '../components/post/full-post/full-post.component';
 import { ModalRightComponent } from '../components/modal-right/modal-right.component';
@@ -36,7 +37,12 @@ const customNotifierOptions: NotifierOptions = {
 };
 
 @NgModule({
-  declarations: [MiniPostComponent, FullPostComponent, ModalRightComponent],
+  declarations: [
+    MiniPostComponent,
+    FullPostComponent,
+    ModalRightComponent,
+    MiniColumnComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -49,6 +55,7 @@ const customNotifierOptions: NotifierOptions = {
     MiniPostComponent,
     FullPostComponent,
     ModalRightComponent,
+    MiniColumnComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,

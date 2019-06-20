@@ -70,11 +70,25 @@
     </ng-container>
     <ng-container *ngIf="!isShowPosts">
       <section *ngFor="let column of columns">
-        {{ columns }}
         <!--show column with favorite icon-->
-        <!--<div>
-          <app-mini-column [column]="column"></app-mini-column>
-        </div-->
+        <app-mini-column [column]="column">
+          <mat-icon
+            class="favorite-icon"
+            aria-hidden="false"
+            aria-label="Favorite"
+            *ngIf="verifyIsFavorite(column)"
+            (click)="favoriteColumn(false, column._id)"
+            >favorite</mat-icon
+          >
+          <mat-icon
+            class="favorite-icon"
+            aria-hidden="false"
+            aria-label="Favorite"
+            *ngIf="!verifyIsFavorite(column)"
+            (click)="favoriteColumn(true, column._id)"
+            >favorite_border</mat-icon
+          >
+        </app-mini-column>
       </section>
     </ng-container>
   </div>

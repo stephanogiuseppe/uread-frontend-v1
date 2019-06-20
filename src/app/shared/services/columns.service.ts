@@ -41,4 +41,20 @@ export class ColumnsService {
       this.headers
     );
   }
+
+  public subscribeColumn(columnId: string): Observable<any> {
+    return this.http.put<any>(
+      `${this.COLUMN_URL}/${columnId}/subscribe`,
+      {},
+      this.headers
+    );
+  }
+
+  public unsubscribeColumn(columnId: string): Observable<any> {
+    return this.http.put<any>(
+      `${this.COLUMN_URL}/${columnId}/unsubscribe`,
+      {},
+      this.headers
+    );
+  }
 }
