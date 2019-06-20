@@ -52,7 +52,6 @@ export class HomeComponent implements OnInit {
   }
 
   public async showPostDetails(post: Post): Promise<void> {
-    console.log(post);
     await this.getPostById(post['_id']);
     this.isPostOpen = true;
   }
@@ -88,13 +87,9 @@ export class HomeComponent implements OnInit {
 
   public getSubscriptions(): void {
     this.isShowPosts = false;
-    this.columnsService.getColumnBySubscriptions().subscribe(
-      columns => {
-        console.log(columns);
-        this.columns = columns;
-      },
-      err => console.log(err)
-    );
+    this.columnsService.getColumnBySubscriptions().subscribe(columns => {
+      this.columns = columns;
+    });
   }
 
   public emitEventCloseToModalRight(): void {
