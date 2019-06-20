@@ -21,9 +21,14 @@
       "title-page": "Feed",
       "filter": "Filtros",
       "columns-name": "Colunas",
-      "post-name": "Nome da postagem",
+      "post-name": "Busca por postagem",
       "search": "Buscar",
-      "applied-search": "Busca aplicada"
+      "applied-search": "Busca aplicada",
+      "options": {
+        "posts": "Todas as postagens",
+        "columns": "Todas as colunas",
+        "subscriptions": "Minhas inscrições"
+      }
     }
   },
   "columns": {

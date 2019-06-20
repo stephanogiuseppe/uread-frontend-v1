@@ -23,7 +23,12 @@
       "columns-name": "Columns",
       "post-name": "Post name",
       "search": "Search",
-      "applied-search": "Applied Search"
+      "applied-search": "Applied Search",
+      "options": {
+        "posts": "All posts",
+        "columns": "All columns",
+        "subscriptions": "My subscriptions"
+      }
     }
   },
   "columns": {

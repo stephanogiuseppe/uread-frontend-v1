@@ -3,6 +3,19 @@
     <aside class="main-filter-container">
       <h3>{{ 'home.feeds.filter' | translate }}</h3>
       <form [formGroup]="searchForm">
+        <mat-button-toggle-group
+          name="fontStyle"
+          aria-label="Font Style"
+          #matButtonToggle="matButtonToggleGroup"
+          (change)="changeTypeSearch(matButtonToggle.value)"
+        >
+          <ng-container *ngFor="let option of toggleOptions; let i = index">
+            <mat-button-toggle value="{{ option }}" checked="{{ i === 0 }}">{{
+              'home.feeds.options.' + option | translate
+            }}</mat-button-toggle>
+          </ng-container>
+        </mat-button-toggle-group>
+
         <mat-form-field appearance="outline">
           <mat-label>{{ 'home.feeds.columns-name' | translate }}</mat-label>
           <mat-select [disabled]="!columns || !columns.length">
@@ -31,8 +44,21 @@
         {{ searchForm.controls.searchFormControl.value }}
       </div>
     </aside>
-    <section *ngFor="let post of posts">
-      <app-mini-post [post]="post"></app-mini-post>
-    </section>
+    <ng-container *ngIf="isShowPosts">
+      <section *ngFor="let post of posts">
+        <div (click)="showPostDetails(post)">
+          <app-mini-post [post]="post"></app-mini-post>
+        </div>
+      </section>
+    </ng-container>
+    <ng-container *ngIf="!isShowPosts">
+      <section *ngFor="let column of columns">
+        {{ columns }}
+        <!--show column with favorite icon-->
+        <!--<div>
+          <app-mini-column [column]="column"></app-mini-column>
+        </div-->
+      </section>
+    </ng-container>
   </div>
 </main>
