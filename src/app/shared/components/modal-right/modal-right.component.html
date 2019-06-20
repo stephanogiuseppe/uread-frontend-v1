@@ -4,7 +4,10 @@
   [style.width]="modalRightWidth"
   [ngClass]="fadeOut ? 'fade-out-modal' : 'fade-in-modal'"
 >
-  <div class="gi-close" (click)="closeModal()">
-    <ng-content></ng-content>
+  <div class="fade-close" (click)="closeModal()">
+    <ng-content select="[closeIcon]"></ng-content>
+  </div>
+  <div class="fade-content">
+    <ng-content select="[body]"></ng-content>
   </div>
 </div>

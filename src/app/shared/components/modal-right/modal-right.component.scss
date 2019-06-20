@@ -18,16 +18,6 @@
   }
 }
 
-.gi-close {
-  height: 1.2rem;
-  width: 1rem;
-  position: fixed;
-  float: left;
-  top: 2.7rem;
-  cursor: pointer;
-  z-index: 5;
-}
-
 .fade-modal {
   display: block;
   position: fixed;
@@ -36,7 +26,7 @@
   z-index: 10;
   height: 100vh;
   padding: 0rem 3.5rem 3rem 2.5rem;
-  background: -webkit-linear-gradient(180deg, $white 6rem, $primary 4rem);
+  background: whitesmoke;
   overflow: auto;
 
   &.fade-in-modal {
@@ -53,6 +43,20 @@
     -moz-animation: fade-out-modal-right 0.2s ease-in-out;
     -o-animation: fade-out-modal-right 0.2s ease-in-out;
     animation: fade-out-modal-right 0.2s ease-in-out;
+  }
+
+  .fade-content {
+    position: relative;
+    top: 5rem;
+  }
+  .fade-close {
+    height: 1.2rem;
+    width: 1rem;
+    position: fixed;
+    float: left;
+    top: 2.7rem;
+    cursor: pointer;
+    z-index: 5;
   }
 }
 

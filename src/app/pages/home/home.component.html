@@ -1,3 +1,20 @@
+<app-modal-right
+  [close]="true"
+  [closeModalSubscription]="closeSubject.asObservable()"
+  (closed)="onChangeModalState('isPostOpen')"
+  *ngIf="isPostOpen"
+  [modalRightWidth]="'90%'"
+>
+  <mat-icon
+    class="arrow-right-icon"
+    aria-hidden="false"
+    aria-label="Arrow"
+    closeIcon
+    >arrow_forward</mat-icon
+  >
+  <app-full-post [post]="post" body></app-full-post>
+</app-modal-right>
+
 <main>
   <div class="main-center">
     <aside class="main-filter-container">

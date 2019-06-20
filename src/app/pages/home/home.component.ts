@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
+import { Subject, Observable } from 'rxjs';
 
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { Post } from 'src/app/shared/models/Post.model';
@@ -18,8 +19,11 @@ export class HomeComponent implements OnInit {
   public isShowPosts: boolean;
   public searchForm: FormGroup;
   public columns: Array<Column>;
+  public post: Post;
   public posts: Array<Post>;
   public toggleOptions: Array<string> = ['posts', 'columns', 'subscriptions'];
+  public isPostOpen: boolean;
+  public closeSubject: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     private translate: TranslateService,
@@ -44,14 +48,22 @@ export class HomeComponent implements OnInit {
       .subscribe(posts => (this.posts = posts));
   }
 
-  public showPostDetails(post: Post): void {
+  public async showPostDetails(post: Post): Promise<void> {
     console.log(post);
+    await this.getPostById(post['_id']);
+    this.isPostOpen = true;
   }
 
   public changeTypeSearch(searchValue: string): void {
     const pascalCase =
       searchValue.charAt(0).toUpperCase() + searchValue.substr(1);
     this[`get${pascalCase}`]();
+  }
+
+  public async getPostById(id: string): Promise<void> {
+    await this.postsService
+      .getPostById(id)
+      .subscribe(post => (this.post = post));
   }
 
   public getPosts(): void {
@@ -71,5 +83,13 @@ export class HomeComponent implements OnInit {
     this.columnsService
       .getColumnBySubscriptions()
       .subscribe(columns => (this.columns = columns));
+  }
+
+  public emitEventCloseToModalRight(): void {
+    this.closeSubject.next(true);
+  }
+
+  public onChangeModalState(option): void {
+    this[option] = !this[option];
   }
 }

@@ -10,19 +10,10 @@ import { PostsService } from 'src/app/shared/services/posts.service';
   styleUrls: ['./full-posts.component.scss']
 })
 export class FullPostComponent implements OnInit {
-  @Input() public postId: string;
+  @Input() public post: Post;
   public IMG_SRC = `${environment.api.baseUrl}/files/`;
-  public post: Post;
 
-  constructor(private postService: PostsService) {
-    this.getPost();
-  }
+  constructor() {}
 
   public ngOnInit(): void {}
-
-  private getPost(): void {
-    this.postService
-      .getPostById(this.postId)
-      .subscribe(post => (this.post = post));
-  }
 }
