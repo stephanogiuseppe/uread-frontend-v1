@@ -18,13 +18,6 @@ export class UserService {
   private AUTH_URL = `${environment.api.baseUrl}/auth/authenticate`;
   private USER_URL = `${environment.api.baseUrl}/user`;
 
-  private headers = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: 'auth_token'
-    })
-  };
-
   private authenticateUser = new BehaviorSubject<boolean>(false);
   public userIsAuthenticated = this.authenticateUser.asObservable();
 
@@ -34,12 +27,22 @@ export class UserService {
     private router: Router
   ) {}
 
+  private getHeader(): any {
+    return {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization:
+          'Bearer ' + JSON.parse(localStorage.getItem('usrdt')).token
+      })
+    };
+  }
+
   private changeLogged(value): void {
     this.authenticateUser.next(value);
   }
 
   public signUpUser(user: User): void {
-    this.http.post<any>(this.REGISTER_USER_URL, user, this.headers).subscribe(
+    this.http.post<any>(this.REGISTER_USER_URL, user).subscribe(
       userCredentials => {
         this.storageService.setItemStorage(
           this.USER_DATA,
@@ -85,7 +88,8 @@ export class UserService {
     }
   }
 
-  public updateUser(user: User): Observable<any> {
-    return this.http.put<any>(`${this.USER_URL}/${user._id}`, this.headers);
+  public updateUser(id: string, user: User): Observable<any> {
+    const headers = this.getHeader();
+    return this.http.put<any>(`${this.USER_URL}/${id}`, user, headers);
   }
 }

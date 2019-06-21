@@ -1,15 +1,63 @@
 <main>
   <div class="main-center">
     <section>
-      <app-modal-right
-        [close]="true"
-        [closeModalSubscription]="closeSubject.asObservable()"
-        (closed)="onChangeFilterOptionsBox('filterOption')"
-        *ngIf="filterOption"
+      <form [formGroup]="userForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>E-mail</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>New Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+        </mat-form-field>
+
+        <mat-form-field *ngIf="user && user.favoritePosts">
+          <mat-chip-list
+            aria-label="Favorite list"
+            ngDefaultControl
+            [formControl]="userForm.controls.favoritePosts"
+          >
+            <mat-chip
+              *ngFor="let post of user.favoritePosts"
+              [removable]="true"
+              (removed)="remove(post)"
+            >
+              {{ post && post.title }}
+            </mat-chip>
+          </mat-chip-list>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="user && user.subscriptions">
+          <mat-chip-list
+            aria-label="Subscriptions list"
+            ngDefaultControl
+            [formControl]="userForm.controls.subscriptions"
+          >
+            <mat-chip
+              *ngFor="let column of user.subscriptions"
+              [removable]="true"
+              (removed)="remove(column)"
+            >
+              {{ column && column.title }}
+            </mat-chip>
+          </mat-chip-list>
+        </mat-form-field>
+      </form>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="fl-right"
+        (click)="onSubmit()"
       >
-        CONTENT TEST
-      </app-modal-right>
+        Update user
+      </button>
     </section>
-    <button (click)="onChangeOpenFilterOption()">T</button>
   </div>
 </main>
