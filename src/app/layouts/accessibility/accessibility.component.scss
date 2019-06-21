@@ -37,3 +37,9 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .accessibility {
+    margin: 0 0 1rem 1rem;
+  }
+}
