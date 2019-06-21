@@ -36,3 +36,9 @@ $candy-app-theme: mat-light-theme(
 .mat-form-field-wrapper {
   padding-bottom: 0;
 }
+
+@media screen and (max-width: 450px) {
+  mat-button-toggle-group {
+    flex-wrap: wrap;
+  }
+}
