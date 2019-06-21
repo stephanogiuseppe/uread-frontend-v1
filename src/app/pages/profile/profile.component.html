@@ -3,17 +3,17 @@
     <section>
       <form [formGroup]="userForm">
         <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
+          <mat-label>{{ 'forms.sign.name' | translate }}</mat-label>
           <input matInput type="text" formControlName="name" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>E-mail</mat-label>
+          <mat-label>{{ 'forms.sign.email' | translate }}</mat-label>
           <input matInput type="email" formControlName="email" />
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>New Password</mat-label>
+          <mat-label>{{ 'forms.sign.new-password' | translate }}</mat-label>
           <input matInput type="password" formControlName="password" />
         </mat-form-field>
 
@@ -56,7 +56,7 @@
         class="fl-right"
         (click)="onSubmit()"
       >
-        Update user
+        {{ 'forms.sign.update-user' | translate }}
       </button>
     </section>
   </div>

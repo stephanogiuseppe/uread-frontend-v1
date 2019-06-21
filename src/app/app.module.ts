@@ -14,6 +14,7 @@ import { NavBarModule } from './layouts/nav-bar/nav-bar.module';
 import { AccessibilityModule } from './layouts/accessibility/accessibility.module';
 import { LoginModule } from './pages/login/login.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ChangeTranslateService } from './shared/services/changeTranslate.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -40,7 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AccessibilityModule,
     LoginModule
   ],
-  providers: [],
+  providers: [ChangeTranslateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

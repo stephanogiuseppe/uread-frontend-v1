@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { Post } from 'src/app/shared/models/Post.model';
 import { ColumnsService } from 'src/app/shared/services/columns.service';
 import { Column } from 'src/app/shared/models/Column.model';
+import { ChangeTranslateService } from 'src/app/shared/services/changeTranslate.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  private translateServiceObservable: Subscription;
   public isShowPosts: boolean;
   public searchForm: FormGroup;
   public columns: Array<Column>;
@@ -31,11 +33,19 @@ export class HomeComponent implements OnInit {
     private translate: TranslateService,
     private postsService: PostsService,
     private columnsService: ColumnsService,
-    private router: Router
+    private router: Router,
+    private changeTranslateService: ChangeTranslateService
   ) {
-    translate.setDefaultLang('pt-br');
-    translate.use('pt-br');
     this.uerId = JSON.parse(localStorage.getItem('usrdt')).user._id;
+
+    translate.setDefaultLang('pt-br');
+    translate.use(this.changeTranslateService.currentLanguage);
+
+    this.translateServiceObservable = this.changeTranslateService.language$.subscribe(
+      (language: string) => {
+        translate.use(language);
+      }
+    );
   }
 
   public ngOnInit(): void {
@@ -43,6 +53,10 @@ export class HomeComponent implements OnInit {
       searchFormControl: new FormControl(null)
     });
     this.getPosts();
+  }
+
+  public ngOnDestroy(): void {
+    this.translateServiceObservable.unsubscribe();
   }
 
   public onSubmit(): void {

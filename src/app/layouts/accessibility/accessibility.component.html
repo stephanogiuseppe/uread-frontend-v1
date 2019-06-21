@@ -15,30 +15,30 @@
   <mat-menu #menu="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="languages">
       <mat-icon>language</mat-icon>
-      <span>Language</span>
+      <span>{{ 'accessibility.language' | translate }}</span>
     </button>
     <button mat-menu-item disabled>
       <mat-icon>invert_colors</mat-icon>
-      <span>Invert colors</span>
+      <span>{{ 'accessibility.invert-colors' | translate }}</span>
     </button>
     <button mat-menu-item disabled>
       <mat-icon>format_size</mat-icon>
-      <span>Format size</span>
+      <span>{{ 'accessibility.format-size' | translate }}</span>
     </button>
   </mat-menu>
 
   <mat-menu #languages="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item (click)="setLanguage('en')">
       <mat-icon>translate</mat-icon>
       <span>English</span>
     </button>
-    <button mat-menu-item>
-      <mat-icon>translate</mat-icon>
-      <span>Português</span>
-    </button>
-    <button mat-menu-item>
+    <button mat-menu-item (click)="setLanguage('es')">
       <mat-icon>translate</mat-icon>
       <span>Español</span>
+    </button>
+    <button mat-menu-item (click)="setLanguage('pt-br')">
+      <mat-icon>translate</mat-icon>
+      <span>Português</span>
     </button>
   </mat-menu>
 

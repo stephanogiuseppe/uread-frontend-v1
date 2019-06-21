@@ -1,29 +1,28 @@
 {
+  "accessibility": {
+    "language": "Cambiar el idioma",
+    "invert-colors": "Invertir colores",
+    "format-size": "Aumentar letra"
+  },
   "forms": {
+    "sign": {
+      "name": "Nombre",
+      "email": "Correo electronico",
+      "password": "Contraseña",
+      "confirm-password": "Confirmar contraseña",
+      "new-password": "Nova contraseña",
+      "create-user": "Crear usuario",
+      "update-user": "Actualizar usuario",
+      "create-account": "Crear cuenta",
+      "sign-in-instead": "Prefiero iniciar sesión",
+      "enter": "Entrar"
+    },
     "error-message": {
       "email-valid": "Por favor, entre con un correo electrónico válido",
       "email-required": "Correo electrónico es obligatorio",
       "password-required": "Contraseña es obligatoria",
       "password-dont-match": "Contraseñas no coinciden",
       "name-required": "Nombre es obligatorio"
-    }
-  },
-  "sign-up": {
-    "name": "Nombre",
-    "email": "Correo electronico",
-    "password": "Contraseña",
-    "confirm-password": "Confirmar contraseña"
-  },
-  "login": {
-    "email": "Correo electrónico",
-    "password": "Contraseña",
-    "create-account": "Crear cuenta",
-    "sign-in-instead": "Prefiero iniciar sesión",
-    "enter": "Entrar",
-    "error-message": {
-      "email-valid": "Por favor, introduce una dirección de correo electrónico válida",
-      "email-required": "Correo electronico es requerido",
-      "password-required": "Se requiere contraseña"
     }
   },
   "nav": {
@@ -53,5 +52,8 @@
     "post": {
       "title-page": "Posts"
     }
+  },
+  "page-not-found": {
+    "title": "Página não encontrada"
   }
 }

@@ -28,3 +28,8 @@ main {
 .fl-right {
   float: right;
 }
+@media screen and (max-width: 450px) {
+  main {
+    padding-top: 0px;
+  }
+}

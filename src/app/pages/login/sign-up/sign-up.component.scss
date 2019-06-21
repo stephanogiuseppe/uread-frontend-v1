@@ -6,3 +6,9 @@
 .create-user {
   width: 30rem;
 }
+
+@media screen and (max-width: 450px) {
+  .create-user {
+    width: 14rem;
+  }
+}

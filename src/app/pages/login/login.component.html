@@ -1,5 +1,5 @@
 <main class="d-flex jc-center ai-center">
-  <div class="card">
+  <div class="card card-sign-up">
     <div class="d-flex jc-center">
       <div class="bg-login icons-image"></div>
     </div>
@@ -14,8 +14,12 @@
 
     <div>
       <button mat-button (click)="changeFormSignIn()">
-        <span *ngIf="isSignIn">{{ 'login.create-account' | translate }}</span>
-        <span *ngIf="!isSignIn">{{ 'login.sign-in-instead' | translate }}</span>
+        <span *ngIf="isSignIn">{{
+          'forms.sign.create-account' | translate
+        }}</span>
+        <span *ngIf="!isSignIn">{{
+          'forms.sign.sign-in-instead' | translate
+        }}</span>
       </button>
     </div>
   </div>

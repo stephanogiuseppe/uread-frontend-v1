@@ -1,29 +1,28 @@
 {
+  "accessibility": {
+    "language": "Change Language",
+    "invert-colors": "Invert color",
+    "format-size": "Change font size"
+  },
   "forms": {
+    "sign": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirm-password": "Confirm password",
+      "new-password": "New password",
+      "create-user": "Create user",
+      "update-user": "Update user",
+      "create-account": "Create account",
+      "sign-in-instead": "Sign in instead",
+      "enter": "Enter"
+    },
     "error-message": {
       "email-valid": "Please enter a valid email address",
       "email-required": "Email is required",
       "password-required": "Password is required",
       "password-dont-match": "Passwords don't match",
       "name-required": "Name is required"
-    }
-  },
-  "sign-up": {
-    "name": "Name",
-    "email": "Email",
-    "password": "Password",
-    "confirm-password": "Confirm password"
-  },
-  "login": {
-    "email": "Email",
-    "password": "Password",
-    "create-account": "Create account",
-    "sign-in-instead": "Sign in instead",
-    "enter": "Enter",
-    "error-message": {
-      "email-valid": "Please enter a valid email address",
-      "email-required": "Email is required",
-      "password-required": "Email is required"
     }
   },
   "nav": {
@@ -53,5 +52,8 @@
     "post": {
       "title-page": "Posts"
     }
+  },
+  "page-not-found": {
+    "title": "Page not found"
   }
 }

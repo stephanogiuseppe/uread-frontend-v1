@@ -1,6 +1,6 @@
 <form [formGroup]="profileForm">
   <mat-form-field appearance="outline">
-    <mat-label>{{ 'login.email' | translate }}</mat-label>
+    <mat-label>{{ 'forms.sign.email' | translate }}</mat-label>
     <input
       matInput
       type="email"
@@ -14,7 +14,7 @@
         profileForm.controls.emailFormControl.errors.email
       "
     >
-      {{ 'login.error-message.email-valid' | translate }}
+      {{ 'forms.error-message.email-valid' | translate }}
     </mat-error>
     <mat-error
       *ngIf="
@@ -22,12 +22,12 @@
         profileForm.controls.emailFormControl.errors.required
       "
     >
-      {{ 'login.error-message.email-required' | translate }}
+      {{ 'forms.error-message.email-required' | translate }}
     </mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>{{ 'login.password' | translate }}</mat-label>
+    <mat-label>{{ 'forms.sign.password' | translate }}</mat-label>
     <input
       matInput
       type="password"
@@ -40,7 +40,7 @@
         profileForm.controls.passwordFormControl.errors.required
       "
     >
-      {{ 'login.error-message.password-required' | translate }}
+      {{ 'forms.error-message.password-required' | translate }}
     </mat-error>
   </mat-form-field>
 
@@ -50,6 +50,6 @@
     class="fl-right"
     (click)="onSubmit()"
   >
-    {{ 'login.enter' | translate }}
+    {{ 'forms.sign.enter' | translate }}
   </button>
 </form>
