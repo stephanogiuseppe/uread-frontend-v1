@@ -49,6 +49,7 @@ export class UserService {
           JSON.stringify(userCredentials),
           this.STORAGE
         );
+        this.router.navigate(['/home']);
         this.changeLogged(true);
       },
       err => {

@@ -1,4 +1,19 @@
 {
+  "forms": {
+    "error-message": {
+      "email-valid": "Por favor, entre con un correo electrónico válido",
+      "email-required": "Correo electrónico es obligatorio",
+      "password-required": "Contraseña es obligatoria",
+      "password-dont-match": "Contraseñas no coinciden",
+      "name-required": "Nombre es obligatorio"
+    }
+  },
+  "sign-up": {
+    "name": "Nombre",
+    "email": "Correo electronico",
+    "password": "Contraseña",
+    "confirm-password": "Confirmar contraseña"
+  },
   "login": {
     "email": "Correo electrónico",
     "password": "Contraseña",

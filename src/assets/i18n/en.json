@@ -1,4 +1,19 @@
 {
+  "forms": {
+    "error-message": {
+      "email-valid": "Please enter a valid email address",
+      "email-required": "Email is required",
+      "password-required": "Password is required",
+      "password-dont-match": "Passwords don't match",
+      "name-required": "Name is required"
+    }
+  },
+  "sign-up": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirm-password": "Confirm password"
+  },
   "login": {
     "email": "Email",
     "password": "Password",

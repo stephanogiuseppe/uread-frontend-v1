@@ -39,6 +39,5 @@ export class SignInComponent implements OnInit {
       this.profileForm.value.passwordFormControl
     );
     this.userService.signInUser(credencials);
-    console.warn(this.profileForm);
   }
 }

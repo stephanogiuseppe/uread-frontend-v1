@@ -1,3 +1,84 @@
-<p>
-  sign-up works!
-</p>
+<form [formGroup]="profileForm" class="create-user">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'sign-up.name' | translate }}</mat-label>
+    <input matInput type="text" formControlName="name" />
+    <mat-error *ngIf="profileForm.controls.password === null">
+      {{ 'forms.error-message.name-required' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'sign-up.email' | translate }}</mat-label>
+    <input
+      matInput
+      type="email"
+      placeholder="user@mail.com"
+      formControlName="email"
+    />
+
+    <mat-error
+      *ngIf="
+        profileForm.controls.email.errors &&
+        profileForm.controls.email.errors.email
+      "
+    >
+      {{ 'forms.error-message.email-valid' | translate }}
+    </mat-error>
+    <mat-error
+      *ngIf="
+        profileForm.controls.email.errors &&
+        profileForm.controls.email.errors.required
+      "
+    >
+      {{ 'forms.error-message.email-required' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'sign-up.password' | translate }}</mat-label>
+    <input
+      matInput
+      type="password"
+      placeholder="user@mail.com"
+      formControlName="password"
+    />
+    <mat-error
+      *ngIf="
+        profileForm.controls.password.errors &&
+        profileForm.controls.password.errors.required
+      "
+    >
+      {{ 'forms.error-message.password-required' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>{{ 'sign-up.password' | translate }}</mat-label>
+    <input
+      matInput
+      type="password"
+      placeholder="user@mail.com"
+      formControlName="passwordVerification"
+    />
+    <mat-error
+      *ngIf="
+        profileForm.value.password !== profileForm.value.passwordVerification
+      "
+    >
+      {{ 'forms.error-message.password-dont-match' | translate }}
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="fl-right"
+    [disabled]="
+      profileForm.invalid ||
+      profileForm.value.password !== profileForm.value.passwordVerification
+    "
+    (click)="onSubmit()"
+  >
+    {{ 'sign-up.create' | translate }}
+  </button>
+</form>
