@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { NavBarModule } from './layouts/nav-bar/nav-bar.module';
+import { AccessibilityModule } from './layouts/accessibility/accessibility.module';
 import { LoginModule } from './pages/login/login.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       enabled: environment.production
     }),
     NavBarModule,
+    AccessibilityModule,
     LoginModule
   ],
   providers: [],

@@ -1,0 +1,38 @@
+@import 'src/assets/sass/colors.scss';
+
+.accessibility {
+  z-index: 10;
+  position: fixed;
+  display: block;
+  bottom: 0;
+  margin: 0 3rem 3rem 3rem;
+
+  .accessibility-icon {
+    border: 1px solid $secondary;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    left: 3rem;
+    bottom: 3rem;
+    display: block;
+    background: $secondary;
+    color: $white;
+  }
+
+  .arrow-top-icon {
+    border: 1px solid $secondary;
+    border-radius: 0.5rem;
+    padding: 0.4rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    right: 3rem;
+    bottom: 3rem;
+    display: block;
+    position: fixed;
+    background: $secondary;
+    color: $white;
+  }
+}
