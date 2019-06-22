@@ -1,1 +1,11 @@
 <h3>{{ 'columns.post.title-page' | translate }}</h3>
+
+<mat-icon
+  aria-hidden="false"
+  aria-label="Add"
+  closeIcon
+  (click)="openAddPostDialog()"
+  >add</mat-icon
+>
+
+<div *ngFor="let post of posts">{{ post.title }}</div>

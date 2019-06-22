@@ -59,7 +59,15 @@
       }
     },
     "post": {
-      "title-page": "Posts"
+      "title-page": "Posts",
+      "form": {
+        "title-create": "Formulario de creación de post",
+        "title": "Título",
+        "description": "Descripción",
+        "image": "Fotografía",
+        "tag": "Etiqueta",
+        "active": "Activo"
+      }
     }
   },
   "page-not-found": {
