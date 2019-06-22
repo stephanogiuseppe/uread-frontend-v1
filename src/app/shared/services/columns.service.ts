@@ -23,8 +23,8 @@ export class ColumnsService {
 
   constructor(private http: HttpClient) {}
 
-  public createColumn(post: Column): Observable<any> {
-    return this.http.post<any>(this.COLUMN_URL, post, this.headers);
+  public createColumn(column: Column): Observable<any> {
+    return this.http.post<any>(this.COLUMN_URL, column, this.headers);
   }
 
   public getColumns(): Observable<any> {

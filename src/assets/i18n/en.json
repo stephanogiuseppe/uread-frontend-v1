@@ -23,6 +23,10 @@
       "password-required": "Password is required",
       "password-dont-match": "Passwords don't match",
       "name-required": "Name is required"
+    },
+    "generic": {
+      "create": "Create",
+      "cancel": "Cancel"
     }
   },
   "nav": {
@@ -47,7 +51,12 @@
   },
   "columns": {
     "column": {
-      "title-page": "Columns"
+      "title-page": "Columns",
+      "form": {
+        "title-create": "Column form create",
+        "title": "Title",
+        "description": "Description"
+      }
     },
     "post": {
       "title-page": "Posts"

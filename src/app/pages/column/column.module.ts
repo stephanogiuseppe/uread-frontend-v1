@@ -6,9 +6,16 @@ import { ColumnComponent } from './column.component';
 import { ColumnRoutingModule } from './column-routing.module';
 import { ColumnsComponent } from './columns/columns.component';
 import { PostsComponent } from './posts/posts.component';
+import { ColumnFormComponent } from './columns/column-form.component';
 
 @NgModule({
-  declarations: [ColumnComponent, ColumnsComponent, PostsComponent],
-  imports: [SharedModule, MaterialModule, ColumnRoutingModule]
+  declarations: [
+    ColumnComponent,
+    ColumnsComponent,
+    PostsComponent,
+    ColumnFormComponent
+  ],
+  imports: [SharedModule, MaterialModule, ColumnRoutingModule],
+  entryComponents: [ColumnFormComponent]
 })
 export class ColumnModule {}

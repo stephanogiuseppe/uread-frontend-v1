@@ -42,3 +42,12 @@ $candy-app-theme: mat-light-theme(
     flex-wrap: wrap;
   }
 }
+
+/* FORCE */
+.mat-form-field-appearance-outline .mat-form-field-subscript-wrapper {
+  padding: 1rem 1em !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0.25em 0 1rem 0 !important;
+}

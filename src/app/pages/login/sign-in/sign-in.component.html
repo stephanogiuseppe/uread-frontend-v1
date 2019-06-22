@@ -28,12 +28,7 @@
 
   <mat-form-field appearance="outline">
     <mat-label>{{ 'forms.sign.password' | translate }}</mat-label>
-    <input
-      matInput
-      type="password"
-      placeholder="user@mail.com"
-      formControlName="passwordFormControl"
-    />
+    <input matInput type="password" formControlName="passwordFormControl" />
     <mat-error
       *ngIf="
         profileForm.controls.passwordFormControl.errors &&

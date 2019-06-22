@@ -1,1 +1,11 @@
 <h3>{{ 'columns.column.title-page' | translate }}</h3>
+
+<mat-icon
+  aria-hidden="false"
+  aria-label="Add"
+  closeIcon
+  (click)="openAddColumnDialog()"
+  >add</mat-icon
+>
+
+<div *ngFor="let column of columns">{{ column.title }}</div>

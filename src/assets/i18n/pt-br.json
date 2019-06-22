@@ -23,6 +23,10 @@
       "password-required": "Senha é obrigatória",
       "password-dont-match": "Senhas diferentes",
       "name-required": "Nome é obrigatório"
+    },
+    "generic": {
+      "create": "Criar",
+      "cancel": "Cancelar"
     }
   },
   "nav": {
@@ -47,7 +51,12 @@
   },
   "columns": {
     "column": {
-      "title-page": "Colunas"
+      "title-page": "Colunas",
+      "form": {
+        "title-create": "Formulário de criação de coluna",
+        "title": "Título",
+        "description": "Descrição"
+      }
     },
     "post": {
       "title-page": "Postagens"
